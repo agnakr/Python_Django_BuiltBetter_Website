@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact_data</title>
+    <style>
+  table,th,tr,td
+  {
+  border:2px solid white;
+  column-width:1000px;
+  height:50px;
+ border-collapse: collapse;
+ text-align: center;
+  }
+  body{
+  color:white;
+  background-image:url("https://png.pngtree.com/thumb_back/fh260/background/20210924/pngtree-computer-lighting-technology-theme-user-link-intelligent-background-image_905379.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+tr:hover {background-color: #2e65b8;}
+a{color:blue;
+text-decoration:none;}
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>MESSAGE</th>
+    </tr>
+{% for b in info %}
+    <tr>
+        <td>{{b.name}}</td>
+        <td>{{b.email}}</td>
+        <td>{{b.message}}</td>
+         <td>
+             <button>
+                 <a href="delete/{{ b.id }}">DELETE</a>
+             </button>
+         </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
